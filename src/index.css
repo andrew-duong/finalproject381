@@ -1,0 +1,464 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif !important;
+  max-height: 100vh;
+  color: #333;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #eee;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(215, 215, 215);
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+button {
+  font-size: small;
+  cursor: pointer;
+}
+
+#container {
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+#container>header {
+  border-top: 5px solid gray;
+
+}
+
+header h1 a:hover {
+
+  color: gray;
+}
+
+header {
+  display: flex;
+  flex-direction: row-reverse;
+  border-bottom: 1px solid #eee;
+}
+
+header aside {
+  flex: 0 1 25%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#menu-button {
+  padding: 0 20px;
+  font-size: 1.25em;
+}
+
+button:hover,
+.button:hover {
+  background-color: gray;
+  color: white;
+}
+
+#app-header {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  padding: 10px 0;
+}
+
+#app-moto {
+  color: gray;
+  font-size: 0.7em;
+  padding-top: 4px;
+}
+
+#main-container {
+  display: flex;
+  flex: 1;
+}
+
+#no-obit-yet {
+  color: rgb(155, 155, 155);
+  padding: 50px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.75em;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+#close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 25px 35px;
+  font-size: 1.5em;
+}
+
+.popup-content {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dates {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 1.25em;
+  padding: 20px;
+  width: 50vw;
+}
+
+.picture {
+  background: transparent;
+  max-width: 300px;
+  max-height: 200px;
+  padding: 20px;
+}
+
+#new-obit {
+  background-color: #538d4e;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  width: 50vw;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.25em;
+  border-radius: 8px;
+}
+
+#name {
+  width: 49vw;
+  text-align: left;
+  height: 5vh;
+  font-size: 1.25em;
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding-left: 20px;
+}
+
+#born {
+  font-size: 1em;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+#death {
+  font-size: 1em;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#file {
+  display: none;
+}
+
+#file {
+  text-align: center;
+}
+
+#fileText:hover {
+  color: green;
+  text-decoration: underline;
+}
+
+label {
+  padding: 20px;
+}
+
+button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  color: lightgrey;
+}
+
+#error {
+  color: red;
+}
+
+[id^="play"] {
+  width: 10px;
+  box-sizing: border-box;
+  height: 20px;
+
+  border-color: transparent transparent transparent #202020;
+  transition: 100ms all ease;
+  will-change: border-width;
+  cursor: pointer;
+
+  border-style: solid;
+  border-width: 11px 0 11px 20px;
+}
+
+[id^="play"].pause {
+  border-style: double;
+  border-width: 0px 0 0px 20px;
+}
+
+
+
+@media only screen and (min-width: 1536px) {
+  .flexItem {
+    font-size: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .flexItem>* {
+    flex-grow: 1;
+    flex-shrink: 2;
+  }
+
+
+  [id^="obit-desc"] {
+    display: none;
+  }
+
+  [id^="obit-desc"].click {
+    border: 1px solid gray;
+    border-top: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
+  }
+
+  #obit-container {
+    padding-top: 2vw;
+    max-width: 50vw;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: top;
+    align-items: center;
+  }
+  
+
+  .img {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    max-width: 40vw;
+    width: 20vw;
+    filter: grayscale(75%);
+  }
+
+  [id^="obit-img"] {
+    padding-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid gray;
+  }
+  [id^="obit-img"].open {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    text-align: center;
+    border: 1px solid gray;
+    border-bottom: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .flexItem {
+    flex-shrink: 3;
+    flex-grow: 1;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: top;
+    align-items: center;
+
+  }
+
+  .flexItem>* {
+    flex: 1;
+    flex-grow: 1;
+    flex-shrink: 2;
+  }
+
+
+  [id^="obit-desc"] {
+    display: none;
+  }
+
+  [id^="obit-desc"].click {
+    border: 1px solid gray;
+    border-top: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
+  }
+
+  #obit-container {
+    padding-top: 5vw;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img {
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    filter: grayscale(75%);
+  }
+
+  [id^="obit-img"] {
+    padding-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    min-width: 100%;
+    text-align: center;
+  }
+  [id^="obit-img"].open {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    text-align: center;
+    border: 1px solid gray;
+    border-bottom: none;
+  }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1536px) {
+  .flexItem {
+    flex-shrink: 3;
+    flex-grow: 1;
+    font-size: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+  }
+
+  .flexItem>* {
+    flex-grow: 1;
+    flex-shrink: 2;
+  }
+
+
+  [id^="obit-desc"] {
+    display: none;
+  }
+
+  [id^="obit-desc"].click {
+    border: 1px solid gray;
+    border-top: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
+  }
+
+  #obit-container {
+    padding-top: 2vw;
+    min-width: 40vw;
+    max-width: 48.5vw;
+        display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: top;
+    align-items: center;
+  }
+
+  .img {
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    filter: grayscale(75%);
+  }
+
+  [id^="obit-img"] {
+    padding-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    width: 60%;
+    text-align: center;
+  }
+  [id^="obit-img"].open {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    text-align: center;
+    border: 1px solid gray;
+    border-bottom: none;
+  }
+
+}
+.person{
+  font-family: cursive;
+  font-size: 1.5em;
+  padding-top: 5px;
+}
+.life{
+  font-family: cursive;
+  font-size: 0.75em;
+  padding-top: 3px;
+}
+.desc{
+  font-family: cursive;
+  padding-left: 10px;
+  padding-right: 10px;
+}
