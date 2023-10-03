@@ -58,3 +58,33 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# Ignore compiled files
+*.class
+*.jar
+*.war
+*.ear
+
+# Ignore IDE-specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore build output directories
+target/
+out/
+
+# Ignore system and temporary files
+.DS_Store
+Thumbs.db
+
+# Ignore logs
+*.log
+
+# Ignore configuration files
+application.properties
+config.properties
+
+# Ignore the cacert.pem file
+cacert.pem
